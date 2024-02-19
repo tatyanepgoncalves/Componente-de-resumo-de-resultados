@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --reaction: hsl(0, 100%, 67%);
+  --memory: hsl(39, 100%, 56%);
+  --verbal: hsl(166, 100%, 37%);
+  --visual: hsl(234, 85%, 45%);
+  --card1: hsl(252, 100%, 67%);
+  --card2: hsl(241, 81%, 54%);
+  --circle1: hsla(256, 72%, 46%, 1);
+  --circle2: hsla(241, 72%, 46%, 0);
+  --paleblue: hsl(221, 100%, 96%);
+  --lavander: hsl(241, 100%, 89%);
+  --grayblue: hsl(224, 30%, 27%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.container{
+    display: grid;
+    width: 750px;
+    margin-bottom: 1.5rem;
+}
+
+.col1{
+    background-image: linear-gradient(var(--card1), var(--card2));
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.result{
+    color: #dad4ff;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--circle1), var(--circle2));
+}
+
+.circle span{
+    color: #fff;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    display: block;
+    font-weight: 800;
+}
+
+.circle p{
+    color: hsl(246, 100%, 73%);
+}
+
+
+.col1 h3{
+    font-size: 1.7rem;
+    color: #fdfeff;
+    margin-bottom: 10px;
+}
+
+.score{
+    color: hsl(239, 100%, 88%);
+}
+
+.col2{
+    background-color: #fff;
+    border-radius: 0 30px 30px;
+    padding: 40px;
+}
+
+.summary{
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: var(--grayblue);
+}
+
+.summary-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .04);
+}
+
+.summary-row:nth-of-type(1){
+    background-color: hsl(6, 100%, 98%);
+}
+.summary-row:nth-of-type(2){
+    background-color: hsl(53, 64%, 95%);
+}
+.summary-row:nth-of-type(3){
+    background-color: hsl(180, 44%, 96%);
+}
+.summary-row:nth-of-type(4){
+    background-color: hsl(0, 0%, 95%);
+}
+
+.reaction{
+    color: var(--reaction);
+}
+
+.memory{
+    color: var(--memory);
+}
+
+.verbal{
+    color: var(--verbal);
+}
+
+.visual{
+    color: var(--visual);
+}
+
+.icon-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.numbers{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.numbers span {
+    color: #9496A6;
+}
+
+.col2 button {
+    margin-top: 15px;
+    border-radius: 35px;
+    padding: 17px 0;
+    width: 100%;
+    border: none;
+    background-color: #303B59;
+    color: #F8FFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.col2 button:hover {
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+.attribution{
+    text-align: center;
+}
+
+.attribution a{
+    
+    transition: .3s;
+    cursor: pointer;
+}
+
+.attribution a:hover{
+    color: var(--reaction);
+    font-weight: 600;
+}
+
+@media (min-width: 900px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 2px 30px 25px rgba(229, 234, 248, 0.8), 2px 0 25px rgba(229, 234, 248, 0.8);
+      border-radius: 30px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .col1 {
+      border-radius: 30px;
+    }
+}
+
+@media (max-width: 899px){
+    
+    .container{
+        min-width: 375px;
+        max-width: 899px;
+        width: 500px;
+    }
+    
+    .col1 {
+      padding: 25px 40px 40px 40px;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .summary, .result {
+        font-size: 1.1rem;
+      }
+    .col2 {
+        padding: 30px 40px;
+    }
+    .col1 h3 {
+        font-size: 1.3rem;
+    }
+    .score {
+        font-size: 0.85rem;
+    }
+
+    .attribution{
+        margin-bottom: 1rem;
+    }
+
+    .attribution, .attribution a{
+        text-align: center;
+        font-size: .7rem;
+    }
+}
+
+
+  /* ---- Media Queries ---- 
+  @media (max-width: 750px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .container {
+      flex-direction: column;
+      min-width: 500px;
+    }
+    
+    
+  }
+  
+  }/*#
